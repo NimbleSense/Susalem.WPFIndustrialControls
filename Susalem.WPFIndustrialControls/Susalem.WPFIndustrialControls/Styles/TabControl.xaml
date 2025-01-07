@@ -1,0 +1,219 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ap="clr-namespace:Susalem.WPFIndustrialControls.AttachProperties"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+    <Style x:Key="BrowserTabItem" TargetType="TabItem">
+        <Setter Property="Background" Value="Silver" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="True" />
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Padding" Value="10,5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Grid Margin="{TemplateBinding Margin}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <Path
+                            x:Name="back"
+                            Margin="0,0,-10,0"
+                            Data="M-10,32 A5,5 90 0,0 -5,27 L-5,5 A5,5  90 0,1 0,0 L100,0 A5,5  90 0,1 105,5 L105,27 A5,5 90 0,0 110,32Z"
+                            Fill="Silver"
+                            Stretch="Uniform" />
+                        <Line
+                            x:Name="lineL"
+                            Margin="0,5"
+                            HorizontalAlignment="Left"
+                            Opacity="1"
+                            Stretch="Fill"
+                            Stroke="#99000000"
+                            StrokeThickness="2"
+                            Y2="1" />
+                        <Line
+                            x:Name="lineR"
+                            Margin="0,5,-2,5"
+                            HorizontalAlignment="Right"
+                            Panel.ZIndex="-1"
+                            Opacity="1"
+                            Stretch="Fill"
+                            Stroke="#99000000"
+                            StrokeThickness="2"
+                            Y2="1" />
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter Content="{TemplateBinding ap:IconAP.Icon}" />
+                            <ContentPresenter
+                                Grid.Column="1"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                ContentSource="Header" />
+                            <Button
+                                Grid.Column="2"
+                                Margin="3"
+                                Padding="1"
+                                Background="Transparent"
+                                BorderThickness="0">
+                                <Path
+                                    Width="8"
+                                    Height="8"
+                                    Data="M335.25 300L442.75 407.25A25 25 0 1 1 407.25 442.75L300 335.25L192.75 442.75A25 25 0 0 1 157.25 407.25L264.75 300L157.25 192.75A25 25 0 0 1 157.25 157.25A25 25 0 0 1 192.75 157.25L300 264.75L407.25 157.25A25 25 0 0 1 442.75 157.25A25 25 0 0 1 442.75 192.75z"
+                                    Fill="#99000000"
+                                    Stretch="Uniform" />
+                            </Button>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="lineL" Property="Opacity" Value="0" />
+                            <Setter TargetName="back" Property="Fill" Value="whitesmoke" />
+                            <Setter TargetName="lineR" Property="Opacity" Value="0" />
+                            <Setter Property="Panel.ZIndex" Value="1" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="back" Property="Fill" Value="white" />
+                            <Setter Property="Panel.ZIndex" Value="1" />
+                            <Setter TargetName="lineL" Property="Opacity" Value="0" />
+                            <Setter TargetName="lineR" Property="Opacity" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="BrowserTabControl" TargetType="TabControl">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource BrowserTabItem}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="ColumnDefinition0" />
+                            <ColumnDefinition x:Name="ColumnDefinition1" Width="0" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="RowDefinition0" Height="Auto" />
+                            <RowDefinition x:Name="RowDefinition1" Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid
+                            x:Name="HeaderPanelGrid"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Panel.ZIndex="1"
+                            Background="Silver">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <UniformGrid Margin="10,0" Rows="1">
+                                <Button
+                                    Width="24"
+                                    Height="24"
+                                    Padding="1"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Content="{iconPacks:Material Kind=AccountCircle}" />
+                                <Button
+                                    Width="24"
+                                    Height="24"
+                                    Padding="1"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Content="{iconPacks:Coolicons Kind=WindowSidebar}" />
+                            </UniformGrid>
+                            <TabPanel
+                                x:Name="HeaderPanel"
+                                Grid.Column="1"
+                                IsItemsHost="true"
+                                KeyboardNavigation.TabIndex="1" />
+                            <Button
+                                Grid.Column="2"
+                                Width="24"
+                                Height="24"
+                                Margin="10,0"
+                                Padding="1"
+                                Background="Transparent"
+                                BorderThickness="0">
+                                <Path
+                                    Width="14"
+                                    Height="14"
+                                    Stretch="Uniform"
+                                    Stroke="Black">
+                                    <Path.Data>
+                                        <PathGeometry>M222,128a6,6,0,0,1-6,6H134v82a6,6,0,0,1-12,0V134H40a6,6,0,0,1,0-12h82V40a6,6,0,0,1,12,0v82h82A6,6,0,0,1,222,128Z</PathGeometry>
+                                    </Path.Data>
+                                </Path>
+                            </Button>
+                        </Grid>
+                        <Border
+                            x:Name="ContentPanel"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding ap:CornerRadiusAP.CornerRadius}"
+                            KeyboardNavigation.DirectionalNavigation="Contained"
+                            KeyboardNavigation.TabIndex="2"
+                            KeyboardNavigation.TabNavigation="Local"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ContentPresenter
+                                x:Name="PART_SelectedContentHost"
+                                Margin="{TemplateBinding Padding}"
+                                ContentSource="SelectedContent"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="TabStripPlacement" Value="Bottom">
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanelGrid" Property="Grid.Row" Value="1" />
+                            <Setter TargetName="HeaderPanelGrid" Property="Margin" Value="2,0,2,2" />
+                            <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="Height" Value="Auto" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Left">
+                            <Setter TargetName="ColumnDefinition0" Property="Width" Value="Auto" />
+                            <Setter TargetName="ColumnDefinition1" Property="Width" Value="*" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanelGrid" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="HeaderPanelGrid" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanelGrid" Property="Margin" Value="2,2,0,2" />
+                            <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="Height" Value="0" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Right">
+                            <Setter TargetName="ColumnDefinition0" Property="Width" Value="*" />
+                            <Setter TargetName="ColumnDefinition1" Property="Width" Value="Auto" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanelGrid" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="HeaderPanelGrid" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanelGrid" Property="Margin" Value="0,2,2,2" />
+                            <Setter TargetName="RowDefinition0" Property="Height" Value="*" />
+                            <Setter TargetName="RowDefinition1" Property="Height" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+</ResourceDictionary>

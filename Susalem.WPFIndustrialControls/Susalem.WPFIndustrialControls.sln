@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Susalem.WPFIndustrialControls", "Susalem.WPFIndustrialControls\Susalem.WPFIndustrialControls.csproj", "{7A7DD330-F2FD-435C-AE08-62F66F3ABF27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{D077DDFB-4D1D-44E3-A1D0-86DB5BFC737E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A7DD330-F2FD-435C-AE08-62F66F3ABF27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A7DD330-F2FD-435C-AE08-62F66F3ABF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A7DD330-F2FD-435C-AE08-62F66F3ABF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A7DD330-F2FD-435C-AE08-62F66F3ABF27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D077DDFB-4D1D-44E3-A1D0-86DB5BFC737E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D077DDFB-4D1D-44E3-A1D0-86DB5BFC737E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D077DDFB-4D1D-44E3-A1D0-86DB5BFC737E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D077DDFB-4D1D-44E3-A1D0-86DB5BFC737E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
