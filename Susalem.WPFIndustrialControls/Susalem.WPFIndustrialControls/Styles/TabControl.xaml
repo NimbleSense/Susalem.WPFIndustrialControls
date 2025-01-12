@@ -3,8 +3,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ap="clr-namespace:Susalem.WPFIndustrialControls.AttachProperties"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Button.xaml" />
+    </ResourceDictionary.MergedDictionaries>
     <Style x:Key="BrowserTabItem" TargetType="TabItem">
-        <Setter Property="Background" Value="Silver" />
+        <Setter Property="Background" Value="#FFE8E8E8" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -17,6 +20,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FontSize" Value="16" />
         <Setter Property="Padding" Value="10,5" />
+        <Setter Property="MaxWidth" Value="200" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
@@ -24,9 +28,9 @@
                         <Path
                             x:Name="back"
                             Margin="0,0,-10,0"
-                            Data="M-10,32 A5,5 90 0,0 -5,27 L-5,5 A5,5  90 0,1 0,0 L100,0 A5,5  90 0,1 105,5 L105,27 A5,5 90 0,0 110,32Z"
-                            Fill="Silver"
-                            Stretch="Uniform" />
+                            Data="M0,32 A5,5 90 0,0 5,27 L5,5 A5,5  190 0,1 10,0 L190,0 A5,5  90 0,1 195,5 L195,27 A5,5 90 0,0 200,32Z"
+                            Fill="#FFE8E8E8"
+                            Stretch="Fill" />
                         <Line
                             x:Name="lineL"
                             Margin="0,5"
@@ -52,22 +56,20 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="auto" />
                             </Grid.ColumnDefinitions>
-                            <ContentPresenter Content="{TemplateBinding ap:IconAP.Icon}" />
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Content="{TemplateBinding ap:IconAP.Icon}" />
                             <ContentPresenter
                                 Grid.Column="1"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                 ContentSource="Header" />
-                            <Button
-                                Grid.Column="2"
-                                Margin="3"
-                                Padding="1"
-                                Background="Transparent"
-                                BorderThickness="0">
+                            <Button Grid.Column="2" Style="{StaticResource EmbeddedButton}">
                                 <Path
                                     Width="8"
                                     Height="8"
-                                    Data="M335.25 300L442.75 407.25A25 25 0 1 1 407.25 442.75L300 335.25L192.75 442.75A25 25 0 0 1 157.25 407.25L264.75 300L157.25 192.75A25 25 0 0 1 157.25 157.25A25 25 0 0 1 192.75 157.25L300 264.75L407.25 157.25A25 25 0 0 1 442.75 157.25A25 25 0 0 1 442.75 192.75z"
+                                    Data="M1024 960l-64-0.64-448-447.36-448 447.36-64 0.64v-64l448-448-448-448v-64h64l448 448 448-448h64v64l-448 448 448 448v64z"
                                     Fill="#99000000"
                                     Stretch="Uniform" />
                             </Button>
@@ -76,7 +78,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="lineL" Property="Opacity" Value="0" />
-                            <Setter TargetName="back" Property="Fill" Value="whitesmoke" />
+                            <Setter TargetName="back" Property="Fill" Value="Gainsboro" />
                             <Setter TargetName="lineR" Property="Opacity" Value="0" />
                             <Setter Property="Panel.ZIndex" Value="1" />
                         </Trigger>
@@ -114,7 +116,7 @@
                             Grid.Row="0"
                             Grid.Column="0"
                             Panel.ZIndex="1"
-                            Background="Silver">
+                            Background="#FFE8E8E8">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto" />
                                 <ColumnDefinition Width="auto" />
@@ -122,36 +124,32 @@
                             </Grid.ColumnDefinitions>
                             <UniformGrid Margin="10,0" Rows="1">
                                 <Button
-                                    Width="24"
-                                    Height="24"
-                                    Padding="1"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    Content="{iconPacks:Material Kind=AccountCircle}" />
+                                    Width="30" 
+                                    Height="30"
+                                    Content="{iconPacks:Material Kind=AccountCircle,Height=20,Width=20}"
+                                    Style="{StaticResource EmbeddedButton}" />
                                 <Button
-                                    Width="24"
-                                    Height="24"
-                                    Padding="1"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    Content="{iconPacks:Coolicons Kind=WindowSidebar}" />
+                                    Width="30" 
+                                    Height="30"
+                                    Content="{iconPacks:Coolicons Kind=WindowSidebar,Height=20,Width=20}"
+                                    Style="{StaticResource EmbeddedButton}" />
                             </UniformGrid>
-                            <TabPanel
+                            <UniformGrid
                                 x:Name="HeaderPanel"
                                 Grid.Column="1"
+                                MaxWidth="1000"
                                 IsItemsHost="true"
-                                KeyboardNavigation.TabIndex="1" />
+                                KeyboardNavigation.TabIndex="1"
+                                Rows="1" />
                             <Button
                                 Grid.Column="2"
                                 Width="24"
                                 Height="24"
                                 Margin="10,0"
-                                Padding="1"
-                                Background="Transparent"
-                                BorderThickness="0">
+                                Style="{StaticResource EmbeddedButton}">
                                 <Path
                                     Width="14"
-                                    Height="14"
+                                    Height="14" 
                                     Stretch="Uniform"
                                     Stroke="Black">
                                     <Path.Data>
