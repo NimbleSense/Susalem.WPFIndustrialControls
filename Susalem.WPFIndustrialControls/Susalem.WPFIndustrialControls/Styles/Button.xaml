@@ -22,6 +22,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
                         HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -593,9 +595,9 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation
+                                            By="-360"
                                             Storyboard.TargetName="rotate"
                                             Storyboard.TargetProperty="Angle"
-                                            By="-360"
                                             Duration="0:0:1">
                                             <DoubleAnimation.EasingFunction>
                                                 <PowerEase EasingMode="EaseOut" Power="2" />

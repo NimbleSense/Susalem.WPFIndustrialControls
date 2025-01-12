@@ -3,7 +3,8 @@
         <ResourceDictionary Source="Styles/Button.xaml" />
         <ResourceDictionary Source="Styles/TabControl.xaml" />
         <ResourceDictionary Source="Styles/ScrollBar.xaml" />
-        
+        <ResourceDictionary Source="Controls/TelescopicArm.xaml" />
+
         <ResourceDictionary Source="Styles/DataGrid.xaml" />
 
     </ResourceDictionary.MergedDictionaries>

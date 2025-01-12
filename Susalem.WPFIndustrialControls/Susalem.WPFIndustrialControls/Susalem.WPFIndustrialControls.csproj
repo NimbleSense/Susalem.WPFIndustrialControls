@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controls\" />
     <Folder Include="Styles\Theming\" />
     <Folder Include="Styles\Themes\" />
   </ItemGroup>

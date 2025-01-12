@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ap="clr-namespace:Susalem.WPFIndustrialControls.AttachProperties;assembly=Susalem.WPFIndustrialControls"
+    xmlns:controls="clr-namespace:Susalem.WPFIndustrialControls.Controls;assembly=Susalem.WPFIndustrialControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:local="clr-namespace:Demo"
@@ -164,12 +165,13 @@
                     Margin="20"
                     Content="DataGrid"
                     FontSize="20" />
-                <DataGrid Style="{StaticResource ElementDataGrid}"
+                <DataGrid
                     x:Name="dg"
                     Width="600"
                     Height="200"
                     HorizontalAlignment="Left"
-                    Background="White">
+                    Background="White"
+                    Style="{StaticResource ElementDataGrid}">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding No}" Header="No" />
@@ -178,6 +180,33 @@
                         <DataGridTextColumn Binding="{Binding Datetime}" Header="Datetime" />
                     </DataGrid.Columns>
                 </DataGrid>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Industrial">
+            <StackPanel>
+                <Label
+                    Margin="20"
+                    Content="TelescopicArm"
+                    FontSize="20" />
+                <controls:TelescopicArm BorderThickness="1" BorderBrush="Black" Width="200" HorizontalAlignment="Left" Height="60">
+                    <controls:TelescopicArm.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimationUsingKeyFrames
+                                        AutoReverse="True"
+                                        RepeatBehavior="Forever"
+                                        Storyboard.TargetProperty="Value">
+                                        <LinearDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+                                        <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                                        <LinearDoubleKeyFrame KeyTime="0:0:2" Value="100" />
+                                        <LinearDoubleKeyFrame KeyTime="0:0:2.5" Value="100" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </controls:TelescopicArm.Triggers>
+                </controls:TelescopicArm>
             </StackPanel>
         </TabItem>
     </TabControl>
