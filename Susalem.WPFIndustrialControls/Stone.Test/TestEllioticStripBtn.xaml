@@ -1,0 +1,22 @@
+﻿<Window
+    x:Class="Stone.Test.TestEllioticStripBtn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Stone.Test"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:stone="clr-namespace:Susalem.Stone;assembly=Susalem.Stone"
+    Title="TestEllioticStripBtn"
+    Width="800"
+    Height="450"
+    AllowsTransparency="True"
+    Background="Transparent"
+    PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
+    PreviewMouseLeftButtonUp="Window_PreviewMouseLeftButtonUp"
+    PreviewMouseMove="Window_PreviewMouseMove"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid>
+        <stone:EllipticStripButton />
+    </Grid>
+</Window>

@@ -1,9 +1,10 @@
-﻿<Application x:Class="Stone.Test.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Stone.Test"
-             StartupUri="MainWindow.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
+﻿<Application
+    x:Class="Stone.Test.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Stone.Test"
+    StartupUri="TestEllioticStripBtn.xaml">
+
+    <!--  StartupUri="MainWindow.xaml"  -->
+    <Application.Resources />
 </Application>
