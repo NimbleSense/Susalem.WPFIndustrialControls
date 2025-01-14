@@ -16,7 +16,9 @@
     PreviewMouseMove="Window_PreviewMouseMove"
     WindowStyle="None"
     mc:Ignorable="d">
+    <!--  Background="Transparent"  -->
     <Grid>
         <stone:EllipticStripButton />
+        <TextBlock Text="666" />
     </Grid>
 </Window>
