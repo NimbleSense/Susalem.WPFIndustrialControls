@@ -9,8 +9,15 @@
     Title="MainWindow"
     Width="800"
     Height="450"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
     mc:Ignorable="d">
     <Grid>
         <stone:GridButton />
     </Grid>
+
+    <!--<Canvas>
+        <stone:CanvasButton />
+    </Canvas>-->
 </Window>

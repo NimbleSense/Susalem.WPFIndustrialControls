@@ -5,6 +5,6 @@
     xmlns:local="clr-namespace:Stone.Test"
     StartupUri="TestEllioticStripBtn.xaml">
 
-    <!--  StartupUri="MainWindow.xaml"  -->
+    <!--  StartupUri="MainWindow.xaml" TestEllioticStripBtn  -->
     <Application.Resources />
 </Application>
