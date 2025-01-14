@@ -9,11 +9,10 @@
     Title="TestEllioticStripBtn"
     Width="800"
     Height="450"
-    AllowsTransparency="True"
-    Background="Transparent"
-    PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
-    PreviewMouseLeftButtonUp="Window_PreviewMouseLeftButtonUp"
-    PreviewMouseMove="Window_PreviewMouseMove"
+    Background="Red"
+    MouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
+    MouseLeftButtonUp="Window_PreviewMouseLeftButtonUp"
+    MouseMove="Window_PreviewMouseMove"
     WindowStyle="None"
     mc:Ignorable="d">
     <!--  Background="Transparent"  -->
