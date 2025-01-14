@@ -7,10 +7,96 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:stone="clr-namespace:Susalem.Stone;assembly=Susalem.Stone"
     Title="MainWindow"
-    Width="800" Background="Red"
-    Height="450" 
+    Width="800"
+    Height="450"
+    Background="Pink"
+    Loaded="Window_Loaded"
     mc:Ignorable="d">
-    <Grid>
+    <!--<Grid>
         <stone:GridButton/>
+    </Grid>-->
+    <!--<Grid>
+        <ContentControl x:Name="contentControl" />
+    </Grid>-->
+
+    <Grid>
+        <!--  定义两行  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <!--  Auto 高度用于分隔符  -->
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  定义两列  -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <!--  Auto 宽度用于分隔符  -->
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  上部容器  -->
+        <Border Grid.Row="0" Background="LightBlue">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="16">
+                1
+            </TextBlock>
+        </Border>
+
+        <!--  分隔符  -->
+        <GridSplitter
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Height="5"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Background="Gray"
+            ResizeDirection="Rows" />
+
+        <!--  下部容器  -->
+        <Border Grid.Row="2" Background="LightGreen">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="16">
+                3
+            </TextBlock>
+        </Border>
+
+        <!--  左侧容器  -->
+        <Border
+            Grid.Row="2"
+            Grid.Column="2"
+            Background="LightBlue">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="16">
+                4
+            </TextBlock>
+        </Border>
+
+        <!--  分隔符  -->
+        <GridSplitter
+            Grid.RowSpan="3"
+            Grid.Column="1"
+            Width="5"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Background="Gray"
+            ResizeDirection="Columns" />
+
+        <!--  右侧容器  -->
+        <Border Grid.Column="2" Background="LightGreen">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="16">
+                2
+            </TextBlock>
+        </Border>
     </Grid>
 </Window>

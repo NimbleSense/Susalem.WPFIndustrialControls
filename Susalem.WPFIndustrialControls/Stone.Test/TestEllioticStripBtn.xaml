@@ -18,6 +18,6 @@
     <!--  Background="Transparent"  -->
     <Grid>
         <stone:EllipticStripButton />
-        <TextBlock Text="666" />
+        <!--<TextBlock Text="666" />-->
     </Grid>
 </Window>

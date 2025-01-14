@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Susalem.Stone;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,14 @@ namespace Stone.Test
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //EllipticStripWindow childWindow = new EllipticStripWindow();
+            //childWindow.Owner = this; // 设置父窗口
+            //contentControl.Content = childWindow.Content; // 将子窗口的内容设置为父窗口的内容
+            //childWindow.Show(); // 显示子窗口
         }
     }
 }
