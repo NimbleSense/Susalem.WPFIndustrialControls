@@ -7,6 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="410"
     Height="60"
+    MouseLeftButtonDown="UserControl_MouseDown"
+    MouseMove="UserControl_MouseMove"
+    MouseLeftButtonUp="UserControl_MouseUp"
     mc:Ignorable="d">
     <Border
         Margin="5"

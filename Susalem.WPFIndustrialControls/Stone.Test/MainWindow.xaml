@@ -7,17 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:stone="clr-namespace:Susalem.Stone;assembly=Susalem.Stone"
     Title="MainWindow"
-    Width="800"
-    Height="450"
-    AllowsTransparency="True"
-    Background="Transparent"
-    WindowStyle="None"
+    Width="800" Background="Red"
+    Height="450" 
     mc:Ignorable="d">
     <Grid>
-        <stone:GridButton />
+        <stone:GridButton/>
     </Grid>
-
-    <!--<Canvas>
-        <stone:CanvasButton />
-    </Canvas>-->
 </Window>

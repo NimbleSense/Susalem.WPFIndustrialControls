@@ -34,5 +34,28 @@ namespace Susalem.Stone
         {
 
         }
+        bool doDrag = false;
+        private void UserControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (doDrag&&e.LeftButton==MouseButtonState.Pressed)
+            {
+                e.Handled = true;
+                this.Margin = new Thickness(this.Margin.Left + e.GetPosition(this).X, this.Margin.Top + e.GetPosition(this).Y, this.Margin.Right - e.GetPosition(this).X, this.Margin.Bottom - e.GetPosition(this).Y);
+            }
+        }
+
+        private void UserControl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            doDrag = true;
+            this.CaptureMouse();
+            e.Handled = true;
+        }
+
+        private void UserControl_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            this.ReleaseMouseCapture();
+            doDrag = false;
+            e.Handled = true;
+        }
     }
 }
