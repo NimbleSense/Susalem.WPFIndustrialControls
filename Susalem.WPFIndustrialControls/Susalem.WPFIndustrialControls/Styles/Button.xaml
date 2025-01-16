@@ -187,6 +187,7 @@
         <Setter Property="BorderThickness" Value="2" />
         <Setter Property="BorderBrush" Value="#FFCCCCCC" />
         <Setter Property="Background" Value="White" />
+        <Setter Property="Padding" Value="10" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -336,6 +337,75 @@
 
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style
+        x:Key="MmicryToggleButton"
+        BasedOn="{StaticResource DefaultToggleButton}"
+        TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid
+                        Width="100"
+                        Height="100"
+                        RenderTransformOrigin="{TemplateBinding RenderTransformOrigin}">
+                        <Ellipse
+                            x:Name="e2"
+                            Width="100"
+                            Height="100"
+                            Stroke="WhiteSmoke"
+                            StrokeThickness="2">
+                            <Ellipse.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="5"
+                                    Direction="-45"
+                                    Opacity="0.5"
+                                    ShadowDepth="4" />
+
+                            </Ellipse.Effect>
+                        </Ellipse>
+
+                        <Ellipse
+                            x:Name="e1"
+                            Width="100"
+                            Height="100"
+                            Stroke="WhiteSmoke"
+                            StrokeThickness="2">
+                            <Ellipse.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="5"
+                                    Direction="135"
+                                    ShadowDepth="4"
+                                    Color="White" />
+
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <Ellipse x:Name="e3" Fill="WhiteSmoke" />
+                        <Path
+                            Name="p"
+                            Width="50"
+                            Height="50"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="M300 275A25 25 0 0 1 325 300V550A25 25 0 0 1 275 550V300A25 25 0 0 1 300 275zM414.75 522.25A25 25 0 0 1 391.75 477.75A200 200 0 1 0 208.25 477.75A25 25 0 1 1 185.25 522.25A250 250 0 1 1 414.75 522.25z"
+                            Fill="Gray"
+                            Stretch="Uniform"
+                            StrokeThickness="0" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="e3" Property="Fill" Value="Transparent" />
+                            <Setter TargetName="p" Property="Fill" Value="LawnGreen" />
+                            <Setter TargetName="e3" Property="Margin" Value="2" />
+
+                        </Trigger>
+
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+
             </Setter.Value>
         </Setter>
     </Style>
@@ -657,5 +727,126 @@
         </Setter>
 
 
+    </Style>
+    <Style x:Key="DefaultRadioButton" TargetType="RadioButton">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="ap:CornerRadiusAP.CornerRadius" Value="3" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="#FFCCCCCC" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                        Background="{TemplateBinding Background}"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Ellipse
+                                Name="bd"
+                                Width="24"
+                                Height="24"
+                                Margin="3"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Stroke="#5566ff"
+                                StrokeThickness="1" />
+                            <Ellipse
+                                Name="check"
+                                Width="14"
+                                Height="14"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Fill="#5566ff"
+                                Visibility="Collapsed" />
+                            <ContentPresenter
+                                Grid.Column="1"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="check" Property="Visibility" Value="Visible" />
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.8" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value="0.6" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="ToolBarRadioButton"
+        BasedOn="{StaticResource DefaultRadioButton}"
+        TargetType="RadioButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding ap:CornerRadiusAP.CornerRadius}"
+                        RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <ScaleTransform x:Name="st" ScaleX="1" ScaleY="1" />
+                        </Border.RenderTransform>
+                        <ContentPresenter
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard x:Name="t">
+                                    <Storyboard Duration="0:0:.1">
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="st"
+                                            Storyboard.TargetProperty="ScaleX"
+                                            To="1.2" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="st"
+                                            Storyboard.TargetProperty="ScaleY"
+                                            To="1.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <StopStoryboard BeginStoryboardName="t" />
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="DeepSkyBlue" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

@@ -18,7 +18,7 @@
             <Style TargetType="Path">
                 <Setter Property="Height" Value="20" />
                 <Setter Property="Width" Value="20" />
-                <Setter Property="Stretch" Value="Uniform"/>
+                <Setter Property="Stretch" Value="Uniform" />
                 <Setter Property="Stroke" Value="Black" />
                 <Setter Property="Margin" Value="5,0" />
             </Style>
@@ -95,9 +95,10 @@
                         Content="Default Toggle Button Unchecked"
                         IsEnabled="False"
                         Style="{StaticResource DefaultToggleButton}" />
+                    <ToggleButton Style="{StaticResource MmicryToggleButton}" />
                     <ToggleButton
-                        Width="40"
-                        Height="40"
+                        Width="50"
+                        Height="50"
                         Content="Circle"
                         Style="{StaticResource CircleToggleButton}" />
                     <ToggleButton
@@ -121,6 +122,32 @@
                         </Path>
                     </ToggleButton>
                 </UniformGrid>
+                <Label
+                    Margin="20"
+                    Content="Toggle Button"
+                    FontSize="20" />
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Margin="3" Style="{StaticResource DefaultRadioButton}">Default RadioButton</RadioButton>
+                    <RadioButton
+                        Margin="3"
+                        FontSize="30"
+                        Style="{StaticResource DefaultRadioButton}">
+                        Another Default RadioButton
+                    </RadioButton>
+                    <UniformGrid Rows="1">
+                        <UniformGrid.Resources>
+                            <Style BasedOn="{StaticResource ToolBarRadioButton}" TargetType="RadioButton">
+                                <Setter Property="Height" Value="80" />
+                                <Setter Property="Width" Value="80" />
+                                <Setter Property="Margin" Value="5,0" />
+                            </Style>
+                        </UniformGrid.Resources>
+                        <RadioButton Content="1" />
+                        <RadioButton Content="2" />
+                        <RadioButton Content="3" />
+                        <RadioButton Content="4" />
+                    </UniformGrid>
+                </StackPanel>
             </StackPanel>
         </TabItem>
         <TabItem Header="TabControl">
@@ -182,9 +209,7 @@
         </TabItem>
         <TabItem Header="DataGrid">
             <ap:IconAP.Icon>
-                <Path Data="M384 96V224H256V96H384zm0 192V416H256V288H384zM192 224H64V96H192V224zM64 288H192V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z">
-                    
-                </Path>
+                <Path Data="M384 96V224H256V96H384zm0 192V416H256V288H384zM192 224H64V96H192V224zM64 288H192V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z" />
             </ap:IconAP.Icon>
             <StackPanel>
                 <Label
@@ -214,7 +239,12 @@
                     Margin="20"
                     Content="TelescopicArm"
                     FontSize="20" />
-                <controls:TelescopicArm BorderThickness="1" BorderBrush="Black" Width="200" HorizontalAlignment="Left" Height="60">
+                <controls:TelescopicArm
+                    Width="200"
+                    Height="60"
+                    HorizontalAlignment="Left"
+                    BorderBrush="Black"
+                    BorderThickness="1">
                     <controls:TelescopicArm.Triggers>
                         <EventTrigger RoutedEvent="Loaded">
                             <BeginStoryboard>
@@ -234,6 +264,9 @@
                     </controls:TelescopicArm.Triggers>
                 </controls:TelescopicArm>
             </StackPanel>
+        </TabItem>
+        <TabItem Header="Slider">
+            <Slider Style="{StaticResource DefaultSlider.Horizontal}" />
         </TabItem>
     </TabControl>
 </Window>
